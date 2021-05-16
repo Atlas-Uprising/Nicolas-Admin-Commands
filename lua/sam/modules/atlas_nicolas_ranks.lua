@@ -8,7 +8,7 @@ command.new("ranksset")
 	:SetPermission("ranksset", "superadmin")
 
     :AddArg("player", {single_target = true})
-    :AddArg("text", {optional = false})
+    :AddArg("number", {optional = false, default = 1})
 
     :GetRestArgs()
 	:Help("Change a Players Rank.")
@@ -22,5 +22,3 @@ command.new("ranksset")
 		})
 	end)
 :End()
-
-print("Loaded Rank Give")

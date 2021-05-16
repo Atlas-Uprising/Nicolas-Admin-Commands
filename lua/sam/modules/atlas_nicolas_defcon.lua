@@ -28,5 +28,3 @@ command.new("setdefcon")
 		})
 	end)
 :End()
-
-print("Loaded Rank Give")
