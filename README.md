@@ -1,5 +1,7 @@
 # Nicolas Scripts Admin Commands
 By [Atlas Uprising](https://scp.gg)
+
+[Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2499089177)
 ## Supported Admin Mods:
 - ULX
 - SAM
