@@ -60,3 +60,21 @@ command.new("givepoints")
 		})
 	end)
 :End()
+
+command.new("resetpoints")
+	:SetPermission("resetpoints", "superadmin")
+
+    :AddArg("player", {single_target = true})
+
+    :GetRestArgs()
+	:Help("Reset a players skill points.")
+
+	:OnExecute(function(ply, target, points)
+        target = target[1]
+        RDV.LEVELS.SKILLS.ResetSkills(target)
+		if sam.is_command_silent then return end
+		sam.player.send_message(nil, "{A} reset {V} skill points.", {
+			A = ply, V = target:Nick()
+		})
+	end)
+:End()

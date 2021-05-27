@@ -18,7 +18,7 @@ command.new("ranksset")
         RDV.RANK.SetRank(target, rank, ply)
 		if sam.is_command_silent then return end
 		sam.player.send_message(nil, "{A} set {V}'s rank to {V_2}.", {
-			A = ply, V = target:Nick(), V_2 = level
+			A = ply, V = target:Nick(), V_2 = rank
 		})
 	end)
 :End()
