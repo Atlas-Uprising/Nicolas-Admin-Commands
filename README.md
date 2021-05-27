@@ -12,6 +12,6 @@ Commands:
 ### Defcon System
  - !setdefcon - Sets the defcon level
 
-Support Admin Mods:
+## Supported Admin Mods:
 - ULX
 - SAM
