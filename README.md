@@ -8,6 +8,7 @@ By [Atlas Uprising](https://scp.gg)
  - !setlevel - Set a players level
  - !addxp - Give Experience to a player
  - !givepoints - Give Skill Points to a player
+ - !resetpoints - Reset a players skill points
 ### Rank System
  - !ranksset - Sets players rank
 ### Companions
