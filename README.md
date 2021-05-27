@@ -1,6 +1,9 @@
 # Nicolas Scripts Admin Commands
 By [Atlas Uprising](https://scp.gg)
-Commands:
+## Supported Admin Mods:
+- ULX
+- SAM
+## Commands:
 ### Skill/Level System
  - !setlevel - Set a players level
  - !addxp - Give Experience to a player
@@ -12,6 +15,3 @@ Commands:
 ### Defcon System
  - !setdefcon - Sets the defcon level
 
-## Supported Admin Mods:
-- ULX
-- SAM
