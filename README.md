@@ -15,6 +15,8 @@ By [Atlas Uprising](https://scp.gg)
  - !ranksset - Sets players rank
 ### Companions
  - !givepet - Give a player a pet
-### Defcon System
+### Defcon System (Legacy)
+ - !setdefcon - Sets the defcon level
+### Defcon System V2
  - !setdefcon - Sets the defcon level
 
