@@ -1,5 +1,41 @@
 if SAM_LOADED then return end
 if not istable(RDV.LEVELS) then return end
+local Controller = {}
+if istable(RDV.LEVELS) then
+	-- Old Version
+	Controller = {
+		setlevel = function(client, level)
+			RDV.LEVELS.INFO.SetLevel(client, level)
+		end,
+		addxp = function(client, xp)
+			RDV.LEVELS.INFO.AddExperience(client, xp)
+		end,
+		givepoints = function(client, points)
+			RDV.LEVELS.SKILLS.GivePoints(client, points)
+		end,
+		resetskills = function(client)
+			RDV.LEVELS.SKILLS.ResetSkills(client)
+		end,
+	}
+elseif istable(RDV.SAL) then
+	-- New Version
+	Controller = {
+		setlevel = function(client, level)
+			RDV.SAL.SetLevel(client, level)
+		end,
+		addxp = function(client, xp)
+			RDV.SAL.AddExperience(client, xp)
+		end,
+		givepoints = function(client, points)
+			RDV.SAL.GivePoints(client, points)
+		end,
+		resetskills = function(client)
+			RDV.SAL.ResetSkills(client)
+		end,
+	}
+else
+	return
+end
 
 local sam, command = sam, sam.command
 
@@ -15,7 +51,7 @@ command.new("setlevel")
 
 	:OnExecute(function(ply, target, level)
         target = target[1]
-        RDV.LEVELS.INFO.SetLevel(target, level)
+        Controller.setlevel(target, level)
 		if sam.is_command_silent then return end
 		sam.player.send_message(nil, "{A} set {V} to level {V_2}.", {
 			A = ply, V = target:Nick(), V_2 = level
@@ -34,7 +70,7 @@ command.new("addxp")
 
 	:OnExecute(function(ply, target, exp)
         target = target[1]
-        RDV.LEVELS.INFO.AddExperience(target, exp)
+        Controller.addxp(target, exp)
 		if sam.is_command_silent then return end
 		sam.player.send_message(nil, "{A} added {V_2} XP to {V}.", {
 			A = ply, V = target:Nick(), V_2 = exp
@@ -53,7 +89,7 @@ command.new("givepoints")
 
 	:OnExecute(function(ply, target, points)
         target = target[1]
-        RDV.LEVELS.SKILLS.GivePoints(target, points)
+        Controller.givepoints(target, points)
 		if sam.is_command_silent then return end
 		sam.player.send_message(nil, "{A} added {V_2} skills point to {V}.", {
 			A = ply, V = target:Nick(), V_2 = points
@@ -71,7 +107,7 @@ command.new("resetpoints")
 
 	:OnExecute(function(ply, target, points)
         target = target[1]
-        RDV.LEVELS.SKILLS.ResetSkills(target)
+        Controller.resetskills(target)
 		if sam.is_command_silent then return end
 		sam.player.send_message(nil, "{A} reset {V} skill points.", {
 			A = ply, V = target:Nick()
