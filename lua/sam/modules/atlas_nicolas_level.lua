@@ -1,5 +1,4 @@
 if SAM_LOADED then return end
-if not istable(RDV.LEVELS) then return end
 local Controller = {}
 if istable(RDV.LEVELS) then
 	-- Old Version
