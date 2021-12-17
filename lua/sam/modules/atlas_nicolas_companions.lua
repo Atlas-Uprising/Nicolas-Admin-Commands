@@ -9,9 +9,7 @@ command.new("givepet")
 
     :AddArg("player", {single_target = true})
     :AddArg("text", {optional = false, check = function(input, ply)
-			if not RDV.COMPANIONS.GetCompanion(PET) then
-				return false
-			end
+			return RDV.COMPANIONS.GetCompanion(input) and true or false
 		end,
 	})
 
